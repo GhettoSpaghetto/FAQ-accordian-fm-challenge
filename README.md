@@ -40,8 +40,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Github](https://github.com/GhettoSpaghetto/FAQ-accordian-fm-challenge)
+- Live Site URL: [Netlify URL](https://faq-accordian-fm.netlify.app/)
 
 ## My process
 
