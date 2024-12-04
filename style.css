@@ -1,0 +1,250 @@
+
+:root{
+
+    --clr-white: white;
+    --clr-pink-lt: hsl(275,100%, 97%);
+    --clr-purple-lt: hsl(292, 16%, 49%);
+    --clr-purple-dark: hsl(292, 42%, 14%);
+
+    --clr-hover: #AD28EB;
+
+    --ff-regular: "Work Sans", sans-serif;
+
+    --fw-regular: 400;
+    --fw-semi-bold: 600;
+    --fw-bold: 700;
+
+    --fs-body: 1rem;
+    --fs-heading: 2.3rem;
+
+}
+
+
+
+
+
+/* CSS RESET */
+
+/*
+1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* General Styling  */
+
+body{
+  
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Work Sans";
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+
+  background-color: var(--clr-pink-lt);
+
+
+}
+
+body::before{
+  content: '';
+  position: absolute;
+  height: 320px;
+  width: 100%;
+  background: url(/assets/images/background-pattern-desktop.svg);
+
+  top: 0;
+  left: 0;
+  background-size: cover;
+}
+
+
+@media (max-width: 50em) {
+
+  body::before{
+    height: 232px;
+    background-image: url(/assets/images/background-pattern-mobile.svg);;
+  }
+}
+
+
+details::details-content{
+
+  block-size: 0;
+  overflow: hidden;
+
+
+  transition-property: block-size,conten-visibility;
+  transition-duration: 0.5s;
+  transition-behavior:allow-discrete;
+}
+
+details[open]::details-content{
+
+  block-size: auto;
+  block-size: calc-size(auto);
+
+}
+
+details:not(:last-child){
+  padding-bottom: 1.2em;
+  border-bottom: solid 2px var(--clr-pink-lt);
+}
+
+
+/* Components */
+
+
+.FAQs-section{
+  
+
+  max-width: 28rem;
+  margin-top: 1rem;
+  margin-bottom: 3rem ;
+  
+
+  position: relative;
+  background: white;
+  padding-inline: 1.5em;
+  padding-block: 2em;
+  border-radius: 0.7rem;
+  z-index: 99;
+
+  transition: max-width 1s;
+
+}
+
+@media (max-width: 50em) {
+
+  .FAQs-section{
+
+    max-width: 20rem;
+  }
+}
+
+
+
+
+.article-header{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.article-heading{
+  font-size: var(--fs-heading);
+}
+
+.star{
+  height: 40px;
+  width: 41px;
+}
+
+.question{
+  font-weight: var(--fw-semi-bold);
+  display: flex;
+  justify-content: space-between;
+  gap: 2em;
+
+}
+
+/* .question:hover{
+  color: var(--clr-hover);
+  cursor: pointer;
+} */
+
+:is(.question:hover, .question:focus-visible){
+
+  color: var(--clr-hover);
+  cursor: pointer;
+  outline: none;
+}
+
+.answer{
+  --flow-space: 1em;
+}
+
+.button{
+  cursor: pointer;
+  height: 30px;
+  min-width: 30px;
+  border: none;
+  background: none;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  pointer-events: none;
+
+}
+
+:is(.button:focus-visible){
+  outline: none;
+  border: 2px solid var(--clr-hover);
+  border-radius: 0.5rem;
+}
+
+.opener{
+
+  background-image: url(./assets/images/icon-plus.svg);
+  
+}
+
+.closer{
+  background: url(./assets/images/icon-minus.svg);
+}
+
+.answer{
+  color: var(--clr-purple-lt);
+}
+
+.flow > * + * {
+  margin-block-start: var(--flow-space, 1.5em);
+}
+
+
